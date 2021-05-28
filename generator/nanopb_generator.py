@@ -1188,7 +1188,7 @@ class Message(ProtoElement):
 
                     if self.oneofs[f.oneof_index] not in self.fields:
                         self.fields.append(self.oneofs[f.oneof_index])
-            else:
+            elif not field_options.skip_message:
                 self.fields.append(field)
 
             if field.math_include_required:
